@@ -1,0 +1,9 @@
+organisation,sector,use_case,status,scale_or_detail
+Royal Devon University Healthcare NHS FT,Health,Ambient voice technology (AI scribe) in Epic EPR; ED pilot,Live outpatient use; 12-month ED pilot from Jan 2026,"2,700+ outpatient consultations; up to ~15,000 extra appointments/yr projected at full rollout"
+Royal Devon / NIHR HRC / Sanome,Health,MEMORI AI early detection of hospital-acquired infections,Ward trials; £300k+ Innovate UK grant (Feb 2026),Evaluation data expected 2026
+University of Exeter / Royal Devon / PenARC,Health research,SAMueL-2 machine learning to personalise stroke care,Research project,"National data on ~250,000 stroke cases"
+Met Office (Exeter HQ) / Alan Turing Institute,Science & weather,FastNet ML weather prediction model; ML in IMPROVER forecast blend,Experimental; not solely-AI operational forecasts,Comparable to Met Office Global Model on RMSE
+University of Exeter,Education,"Enabling AI strategy, AI policy, approved tool catalogue (Copilot, Amazon Quick, Gemini) for staff and students",Live,Assessments split into four AI-use categories
+"Devon County Council (County Hall, Exeter)",Local government,"Microsoft Copilot Chat and licensed M365 Copilot for drafting, summarising, research",Live (policy page published Apr 2026),AI does not make decisions; no personal data without approval
+East Devon District Council,Local government,Copilot used to summarise 1.1m+ words of consultation feedback on new town east of Exeter,Used for planning consultation,"~21,000 homes proposed"
+Age UK Exeter,Charity,AI in the Workplace Policy,Approved Dec 2025,Policy governs staff use of AI tools
