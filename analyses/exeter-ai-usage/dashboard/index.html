@@ -1,0 +1,352 @@
+<meta name="dash-one-writer">
+<style>
+  .ex-page { font-family: var(--font-anthropic-sans); color: var(--color-fg); display: flex; flex-direction: column; gap: var(--cds-gap-xl); max-width: 1100px; }
+  .ex-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; }
+  .ex-lede { font-size: var(--cds-font-size-body); margin: var(--cds-gap-sm) 0 0; max-width: 70ch; line-height: 1.5; }
+  .ex-kicker { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0 0 var(--cds-gap-xs); text-transform: uppercase; letter-spacing: .04em; }
+  .ex-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--cds-gap-md); }
+  .ex-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); }
+  .ex-tile-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+  .ex-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: 2.4rem; line-height: 1.1; margin: var(--cds-gap-xs) 0; font-variant-numeric: tabular-nums; }
+  .ex-tile-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; line-height: 1.4; }
+  .ex-section { display: flex; flex-direction: column; gap: var(--cds-gap-md); }
+  .ex-h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0; }
+  .ex-h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-sm); }
+  .ex-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: var(--cds-gap-sm) 0 0; line-height: 1.4; }
+  .ex-grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--cds-gap-md); }
+  .ex-chart { position: relative; min-height: 180px; }
+  .ex-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--cds-text-secondary); margin: 0 0 var(--cds-gap-sm); padding: 0; list-style: none; }
+  .ex-legend li { display: flex; align-items: center; gap: 6px; }
+  .ex-swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .ex-chart svg text { font-family: var(--font-anthropic-sans); font-size: var(--cds-font-size-caption); }
+  .ex-chart .ex-cat { fill: var(--color-fg); }
+  .ex-chart .ex-val { fill: var(--cds-text-secondary); font-variant-numeric: tabular-nums; }
+  .ex-chart .ex-axis { fill: var(--cds-text-secondary); }
+  .ex-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); box-shadow: var(--cds-shadow-popover); border-radius: var(--cds-radius); padding: 6px 8px; font-size: var(--cds-font-size-caption); color: var(--color-fg); max-width: 260px; z-index: 2; }
+  .ex-tablewrap { overflow-x: auto; }
+  .ex-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); }
+  .ex-table th { text-align: left; color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); border-bottom: 1px solid var(--color-border-line); padding: 6px 8px; }
+  .ex-table td { border-bottom: 1px solid var(--color-border-line); padding: 6px 8px; vertical-align: top; line-height: 1.4; }
+  .ex-table td.ex-num { font-variant-numeric: tabular-nums; text-align: right; }
+  .ex-details summary { cursor: pointer; font-weight: var(--cds-font-weight-medium); }
+  .ex-details ul { margin: var(--cds-gap-sm) 0 0; padding-left: 1.2em; line-height: 1.5; font-size: var(--cds-font-size-caption); }
+</style>
+
+<div class="ex-page">
+  <header id="intro">
+    <p class="ex-kicker">ambursaData · Exeter AI usage · Nov 2026</p>
+    <h1 class="ex-title">How Exeter uses AI</h1>
+    <p class="ex-lede">An estimated <b><span data-draw="num" class="dash-skeleton" data-source="est_range" data-field="low" data-row="0">—</span>–<span data-draw="num" class="dash-skeleton" data-source="est_range" data-field="high" data-row="0">—</span>%</b> of Exeter adults have used generative AI, against <b><span data-draw="num" class="dash-skeleton" data-source="adoption" data-field="pct" data-where="kind=UK measured">—</span>%</b> across the UK, because the city is unusually young. University of Exeter students mostly use AI to understand their subject, but trust in it is low and support hasn't kept pace.</p>
+  </header>
+
+  <section class="ex-tiles" id="headline-tiles" aria-label="Headline figures">
+    <div class="ex-card" id="tile-estimate">
+      <p class="ex-tile-label">Exeter adults who have used generative AI (estimate)</p>
+      <p class="ex-big"><span data-draw="num" class="dash-skeleton" data-source="est_range" data-field="low" data-row="0">—</span>–<span data-draw="num" class="dash-skeleton" data-source="est_range" data-field="high" data-row="0">—</span>%</p>
+      <p class="ex-tile-sub">vs <span data-draw="num" data-source="adoption" data-field="pct" data-where="kind=UK measured">—</span>% UK measured (DSIT, 2025/26). Modelled, not surveyed.</p>
+    </div>
+    <div class="ex-card" id="tile-chatgpt">
+      <p class="ex-tile-label">UoE students who have used ChatGPT</p>
+      <p class="ex-big"><span data-draw="num" class="dash-skeleton" data-source="tools" data-field="pct_students_used" data-where="tool=ChatGPT">—</span>%</p>
+      <p class="ex-tile-sub">Gemini <span data-draw="num" data-source="tools" data-field="pct_students_used" data-where="tool=Google Gemini">—</span>% · Copilot <span data-draw="num" data-source="tools" data-field="pct_students_used" data-where="tool=Microsoft Copilot">—</span>% (Guild, Feb 2026)</p>
+    </div>
+    <div class="ex-card" id="tile-false-info">
+      <p class="ex-tile-label">UoE students who have seen AI give false information</p>
+      <p class="ex-big"><span data-draw="num" class="dash-skeleton" data-source="trust" data-field="pct" data-where="key=false_info">—</span>%</p>
+      <p class="ex-tile-sub"><span data-draw="num" data-source="trust" data-field="pct" data-where="key=worry_flagged">—</span>% worry often about being wrongly flagged for AI use</p>
+    </div>
+    <div class="ex-card" id="tile-workshops">
+      <p class="ex-tile-label">UoE students who want AI workshops or training</p>
+      <p class="ex-big"><span data-draw="num" class="dash-skeleton" data-source="trust" data-field="pct" data-where="key=want_workshops">—</span>%</p>
+      <p class="ex-tile-sub">Only <span data-draw="num" data-source="trust" data-field="pct" data-where="key=want_ban">—</span>% want AI banned at university</p>
+    </div>
+  </section>
+
+  <section class="ex-section" id="finding-1">
+    <h2 class="ex-h2">1 · Exeter is probably a heavier AI user than the UK, because its adults are young</h2>
+    <div class="ex-grid2">
+      <div class="ex-card" id="age-card">
+        <h3 class="ex-h3">Two in five Exeter adults are aged 16–34, against three in ten in England</h3>
+        <ul class="ex-legend" aria-hidden="true">
+          <li><span class="ex-swatch" data-i="0"></span>Exeter</li>
+          <li><span class="ex-swatch" data-i="1"></span>England</li>
+          <li><span class="ex-swatch" data-i="2"></span>South West</li>
+        </ul>
+        <div class="ex-chart" id="age-chart" data-draw="age-chart" data-source="age"></div>
+        <p class="ex-note">Share of residents aged 16+ in each age group. Source: ONS Census 2021.</p>
+      </div>
+      <div class="ex-card" id="estimate-card">
+        <h3 class="ex-h3">Every estimation method puts Exeter above the UK's measured rate</h3>
+        <div class="ex-chart" id="estimate-chart" data-draw="estimate-chart" data-source="adoption"></div>
+        <p class="ex-note">Exeter values are modelled: national usage by age (University of Exeter/YouGov, Mar 2025) re-weighted to Exeter's age profile and indexed to the UK figure, plus a method based on Exeter's share of students. The age-only model ignores Exeter's many graduates, so the real figure may be higher. National non-use is 89% among people aged 65+, so Exeter's non-users are concentrated among its ~23,000 older adults.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-section" id="finding-2">
+    <h2 class="ex-h2">2 · Exeter students use AI as a tutor, not a ghostwriter</h2>
+    <div class="ex-grid2">
+      <div class="ex-card" id="purpose-card">
+        <h3 class="ex-h3">Exeter students use AI to understand concepts more often than UK undergraduates do</h3>
+        <ul class="ex-legend" aria-hidden="true">
+          <li><span class="ex-swatch" data-i="0"></span>Exeter students</li>
+          <li><span class="ex-swatch" data-i="1"></span>UK undergraduates</li>
+          <li><span class="ex-swatch" data-i="2"></span>UK adult AI users</li>
+        </ul>
+        <div class="ex-chart" id="purpose-chart" data-draw="purpose-chart" data-source="purposes"></div>
+        <p class="ex-note">Surveys word their questions differently, so the gaps are directional. Blank = not asked. Sources: Exeter Students' Guild (Feb 2026), HEPI (Dec 2025), DSIT (2025/26).</p>
+      </div>
+      <div class="ex-card" id="tools-card">
+        <h3 class="ex-h3">ChatGPT reaches more than twice as many Exeter students as any other tool</h3>
+        <div class="ex-chart" id="tools-chart" data-draw="tools-chart" data-source="tools"></div>
+        <p class="ex-note">% of University of Exeter students who have used each tool. Source: Exeter Students' Guild AI Report, Feb 2026 (volunteer panel; respondent count not published).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-section" id="finding-2b">
+    <h2 class="ex-h2">Trust and support are lagging behind use</h2>
+    <div class="ex-grid2">
+      <div class="ex-card" id="experience-card">
+        <h3 class="ex-h3">Four in five have caught AI getting things wrong, and only half got helpful guidance even in the best faculty</h3>
+        <div class="ex-chart" id="experience-chart" data-draw="experience-chart" data-source="trust"></div>
+      </div>
+      <div class="ex-card" id="support-card">
+        <h3 class="ex-h3">Students want training, not bans</h3>
+        <div class="ex-chart" id="support-chart" data-draw="support-chart" data-source="trust"></div>
+        <p class="ex-note">% of University of Exeter students. Source: Exeter Students' Guild AI Report, Feb 2026. The report prints "clearer guidelines" as both 19% and 9%; 19% is shown.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-section" id="finding-3">
+    <h2 class="ex-h2">3 · People who avoid AI give different reasons in Exeter and nationally</h2>
+    <div class="ex-grid2">
+      <div class="ex-card" id="barriers-exeter-card">
+        <h3 class="ex-h3">Exeter students who avoid AI mostly cite its environmental impact</h3>
+        <div class="ex-chart" id="barriers-exeter" data-draw="barriers-exeter" data-source="barriers"></div>
+        <p class="ex-note">Base: Exeter students who choose not to use AI (Guild, Feb 2026).</p>
+      </div>
+      <div class="ex-card" id="barriers-uk-card">
+        <h3 class="ex-h3">UK adults who don't use AI mostly say they'd rather not, or worry about privacy</h3>
+        <div class="ex-chart" id="barriers-uk" data-draw="barriers-uk" data-source="barriers"></div>
+        <p class="ex-note">Base: UK adult non-users, online sample (DSIT, 2025/26). "Environmental impact" wasn't offered as an answer here.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ex-section" id="organisations">
+    <h2 class="ex-h2">AI already at work in Exeter organisations</h2>
+    <div class="ex-card ex-tablewrap">
+      <table class="ex-table" id="initiatives-table" data-source="initiatives" data-row-key="organisation">
+        <thead><tr><th data-field="organisation">Organisation</th><th data-field="sector">Sector</th><th data-field="use_case">Use of AI</th><th data-field="status">Status</th><th data-field="scale_or_detail">Scale / detail</th></tr></thead>
+        <tbody data-draw="initiatives-rows"></tbody>
+      </table>
+      <p class="ex-note">A register of documented deployments, not a census. Sources for each row are in the full dataset.</p>
+    </div>
+  </section>
+
+  <section class="ex-section" id="business">
+    <h2 class="ex-h2">Business adoption: fast in the South West, but the sources don't agree</h2>
+    <div class="ex-card ex-tablewrap">
+      <table class="ex-table" id="business-table" data-source="business" data-row-key="source,geography,period">
+        <thead><tr><th data-field="source">Source</th><th data-field="geography">Area</th><th data-field="period">Period</th><th data-field="measure">Measure</th><th data-field="pct" style="text-align:right">%</th></tr></thead>
+        <tbody data-draw="business-rows"></tbody>
+      </table>
+      <p class="ex-note">These sources define "using AI" differently and survey different firms. Compare within a source, not across sources. No Exeter-only business figures exist.</p>
+    </div>
+  </section>
+
+  <details class="ex-details" id="method">
+    <summary>Method, sources and caveats</summary>
+    <ul>
+      <li>No representative survey of Exeter residents' AI use exists. Exeter usage figures describe University of Exeter students (Exeter Students' Guild volunteer panel, Feb 2026).</li>
+      <li>The Exeter-wide estimate is modelled two ways: (a) national use by age group (University of Exeter/YouGov, March 2025, n=1,061) re-weighted to Exeter's 2021 age profile and indexed to DSIT's UK figure of 59%; (b) students (15.8% of residents aged 16+) at HEPI's 95% use rate, everyone else at the implied UK non-student rate.</li>
+      <li>The DSIT South West regional figure (table E6) wasn't available when this was built. Adding it is the most useful next update.</li>
+      <li>Comparisons across surveys are directional: question wording, bases and fieldwork dates differ.</li>
+      <li>Full sources and question wording are in the "All indicators" source, downloadable as CSV.</li>
+    </ul>
+  </details>
+</div>
+
+<script>
+  // Exeter estimate range: lowest and highest modelled Exeter values
+  dash.calc('est_range', {
+    inputs: ['adoption'],
+    title: 'Exeter estimate range',
+    description: 'Lowest and highest of the modelled Exeter estimates, rounded to whole percentages.',
+    fn: (adoption) => {
+      const vals = adoption.filter((r) => r.kind === 'Exeter estimate').map((r) => +r.pct);
+      if (!vals.length) return [];
+      return [{ low: Math.round(Math.min(...vals)), high: Math.round(Math.max(...vals)) }];
+    }
+  });
+
+  window.exEnc = (s) => String(s).replace(/%/g, '%25').replace(/&/g, '%26').replace(/=/g, '%3D');
+  window.exFmt = (v) => { const n = +v; return Number.isFinite(n) ? String(Math.round(n * 10) / 10) : '—'; };
+
+  // Legend swatch colours follow the series colours
+  document.querySelectorAll('.ex-swatch[data-i]').forEach((el) => { el.style.background = dash.colors[+el.dataset.i] || 'var(--cds-chart-muted)'; });
+
+  // Grouped horizontal bar chart: category label above each group, value printed at bar end, tooltip on hover
+  window.exBars = function (el, opts) {
+    const { rows, label, series, aria, source, max = 100, colorFor } = opts;
+    el.replaceChildren();
+    const W = Math.max(240, el.clientWidth || 480);
+    const barH = 14, gap = 2, labelH = 18, groupGap = 12, right = 40, axisH = 18;
+    const n = series.length;
+    const groupH = labelH + n * barH + (n - 1) * gap + groupGap;
+    const H = rows.length * groupH + axisH;
+    const x = d3.scaleLinear().domain([0, max]).range([0, W - right]);
+    const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', aria);
+    [0, 25, 50, 75, 100].filter((t) => t <= max).forEach((t) => {
+      svg.append('line').attr('x1', x(t)).attr('x2', x(t)).attr('y1', 0).attr('y2', H - axisH).style('stroke', 'var(--cds-chart-grid)');
+      svg.append('text').attr('class', 'ex-axis').attr('x', x(t)).attr('y', H - 4).attr('text-anchor', t === 0 ? 'start' : t === max ? 'end' : 'middle').text(t + '%');
+    });
+    const tip = d3.select(el).append('div').attr('class', 'ex-tip').attr('hidden', '');
+    rows.forEach((r, i) => {
+      const g = svg.append('g').attr('transform', `translate(0,${i * groupH})`);
+      g.append('text').attr('class', 'ex-cat').attr('x', 0).attr('y', 13).text(r[label]);
+      series.forEach((s, j) => {
+        const y = labelH + j * (barH + gap);
+        const raw = r[s.field];
+        const has = raw !== null && raw !== undefined && raw !== '' && Number.isFinite(+raw);
+        const v = has ? +raw : null;
+        const color = colorFor ? colorFor(r, j) : (dash.colors[s.colorIdx ?? j] || 'var(--cds-chart-muted)');
+        if (has) {
+          g.append('rect').attr('x', 0).attr('y', y).attr('height', barH).attr('rx', 3).attr('width', Math.max(2, x(v))).style('fill', color);
+          g.append('text').attr('class', 'ex-val').attr('x', x(v) + 4).attr('y', y + barH - 3)
+            .attr('data-source', source).attr('data-field', s.field).attr('data-where', `${label}=${exEnc(r[label])}`)
+            .text(exFmt(v) + '%');
+        } else {
+          g.append('text').attr('class', 'ex-val').attr('x', 0).attr('y', y + barH - 3).text('not asked');
+        }
+        g.append('rect').attr('x', 0).attr('y', y - 1).attr('width', W).attr('height', barH + 2).style('fill', 'transparent')
+          .on('mouseenter mousemove', (ev) => {
+            const [mx, my] = d3.pointer(ev, el);
+            tip.attr('hidden', null).text(`${r[label]}${s.name ? ' · ' + s.name : ''}: ${has ? exFmt(v) + '%' : 'not asked'}`);
+            const tw = tip.node().offsetWidth;
+            tip.style('left', Math.min(mx + 12, el.clientWidth - tw - 4) + 'px').style('top', (my + 14) + 'px');
+          })
+          .on('mouseleave', () => tip.attr('hidden', ''));
+      });
+    });
+  };
+
+  window.exStatus = function (el, d) {
+    if (d.status === 'ok') return true;
+    el.replaceChildren();
+    const p = document.createElement('p');
+    p.className = 'ex-note';
+    p.textContent = d.status === 'error' ? 'Failed to load' : '—';
+    el.appendChild(p);
+    return false;
+  };
+</script>
+
+<script>
+  // Single numbers in sentences and tiles
+  dash.draw('num', (el) => {
+    const d = dash.data(el.dataset.source);
+    el.classList.toggle('dash-skeleton', d.status === 'loading');
+    if (d.status !== 'ok' || !Array.isArray(d.data)) { el.textContent = '—'; return; }
+    let row;
+    if (el.dataset.where) {
+      const [col, ...rest] = el.dataset.where.split('=');
+      const val = decodeURIComponent(rest.join('='));
+      row = d.data.find((r) => String(r[col]) === val);
+    } else {
+      row = d.data[+(el.dataset.row || 0)];
+    }
+    el.textContent = row ? exFmt(row[el.dataset.field]) : '—';
+  });
+
+  dash.draw('age-chart', (el) => {
+    const d = dash.data('age');
+    if (!exStatus(el, d)) return;
+    const groups = ['16-34', '35-64', '65+'];
+    const places = [{ key: 'Exeter', name: 'Exeter' }, { key: 'England', name: 'England' }, { key: 'South West', name: 'South West' }];
+    const rows = groups.map((g) => {
+      const o = { age_group: g };
+      places.forEach((p) => { const r = d.data.find((x) => x.geography === p.key && x.age_group === g); o[p.key] = r ? +r.pct_of_adults : null; });
+      return o;
+    });
+    exBars(el, { rows, label: 'age_group', series: places.map((p, i) => ({ field: p.key, name: p.name, colorIdx: i })), source: 'age', max: 50,
+      aria: 'Grouped bar chart of the share of adults aged 16-34, 35-64 and 65+ in Exeter, England and the South West' });
+    el.querySelectorAll('text.ex-val[data-field]').forEach((t) => {
+      t.setAttribute('data-where', `geography=${exEnc(t.getAttribute('data-field'))}&age_group=${exEnc(t.getAttribute('data-where').split('=')[1])}`);
+      t.setAttribute('data-field', 'pct_of_adults');
+    });
+  });
+
+  dash.draw('estimate-chart', (el) => {
+    const d = dash.data('adoption');
+    if (!exStatus(el, d)) return;
+    const rows = d.data.map((r) => ({ method: r.method, pct: +r.pct, kind: r.kind }));
+    exBars(el, { rows, label: 'method', series: [{ field: 'pct', name: '' }], source: 'adoption',
+      colorFor: (r) => (r.kind === 'UK measured' ? 'var(--cds-chart-muted)' : dash.colors[0]),
+      aria: 'Bar chart of four modelled estimates of Exeter adults who have used generative AI, compared with the measured UK figure' });
+  });
+
+  dash.draw('purpose-chart', (el) => {
+    const d = dash.data('purposes');
+    if (!exStatus(el, d)) return;
+    exBars(el, { rows: d.data, label: 'purpose_group', source: 'purposes',
+      series: [{ field: 'exeter_students', name: 'Exeter students' }, { field: 'uk_undergrads', name: 'UK undergraduates' }, { field: 'uk_adult_users', name: 'UK adult AI users' }],
+      aria: 'Grouped bar chart comparing AI uses among Exeter students, UK undergraduates and UK adult AI users' });
+  });
+
+  dash.draw('tools-chart', (el) => {
+    const d = dash.data('tools');
+    if (!exStatus(el, d)) return;
+    exBars(el, { rows: d.data, label: 'tool', source: 'tools', series: [{ field: 'pct_students_used', name: '' }],
+      aria: 'Bar chart of the share of University of Exeter students who have used each AI tool' });
+  });
+
+  const exTrust = (el, pick, aria) => {
+    const d = dash.data('trust');
+    if (!exStatus(el, d)) return;
+    exBars(el, { rows: d.data.filter(pick), label: 'measure', source: 'trust', series: [{ field: 'pct', name: '' }], aria });
+  };
+  dash.draw('experience-chart', (el) => exTrust(el, (r) => !String(r.key).startsWith('want_'),
+    'Bar chart of Exeter students experience of AI: false information, skills importance, guidance and worry about being flagged'));
+  dash.draw('support-chart', (el) => exTrust(el, (r) => String(r.key).startsWith('want_'),
+    'Bar chart of the support Exeter students want with AI'));
+
+  const exBarriers = (el, pop, aria) => {
+    const d = dash.data('barriers');
+    if (!exStatus(el, d)) return;
+    exBars(el, { rows: d.data.filter((r) => r.population_label === pop), label: 'reason', source: 'barriers', series: [{ field: 'pct', name: '' }], aria });
+    el.querySelectorAll('text.ex-val[data-where]').forEach((t) => t.setAttribute('data-where', `population_label=${exEnc(pop)}&${t.getAttribute('data-where')}`));
+  };
+  dash.draw('barriers-exeter', (el) => exBarriers(el, 'Exeter student non-users', 'Bar chart of reasons Exeter students give for not using AI'));
+  dash.draw('barriers-uk', (el) => exBarriers(el, 'UK adult non-users', 'Bar chart of reasons UK adult non-users give for not using AI'));
+
+  dash.draw('initiatives-rows', (tb) => {
+    const d = dash.data('initiatives');
+    tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    d.data.forEach((r) => {
+      const tr = document.createElement('tr');
+      ['organisation', 'sector', 'use_case', 'status', 'scale_or_detail'].forEach((c) => { const td = document.createElement('td'); td.textContent = r[c] ?? ''; tr.appendChild(td); });
+      tb.appendChild(tr);
+    });
+  });
+
+  dash.draw('business-rows', (tb) => {
+    const d = dash.data('business');
+    tb.replaceChildren();
+    if (d.status !== 'ok') return;
+    d.data.forEach((r) => {
+      const tr = document.createElement('tr');
+      tr.setAttribute('data-key', [r.source, r.geography, r.period].map(exEnc).join(','));
+      ['source', 'geography', 'period', 'measure', 'pct'].forEach((c) => {
+        const td = document.createElement('td');
+        td.textContent = c === 'pct' ? exFmt(r[c]) : (r[c] ?? '');
+        if (c === 'pct') td.className = 'ex-num';
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  });
+</script>
